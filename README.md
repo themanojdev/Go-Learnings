@@ -22,6 +22,8 @@ Master Go fundamentals and build practical applications.
 - [x] **02-variables.md** - Variable declaration, data type basics, multiple variables
 - [x] **03-data-types.md** - Numeric types, string, boolean, composite types (arrays, slices, maps, structs)
 - [x] **04-control-statements.md** - If/Else, Switch/Case, For loops, Break, Continue, Range function
+- [x] **05-goto-statement.md** - Goto statement, when to use, better alternatives (Azazel analogy)
+- [x] **06-defer-panic-recover.md** - Defer, Panic, and Recover concepts
 
 ### Daily Progress
 - [x] Day 1: Your First Go Program
@@ -106,7 +108,5 @@ go run concepts/example-code/simple-import.go
 ---
 
 Created: July 2026
-
-Last Updated: July 2026
-
+Last Updated: 14th July 2026
 Status: Actively Learning 🚀
