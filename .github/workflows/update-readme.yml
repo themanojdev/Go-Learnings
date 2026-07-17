@@ -1,0 +1,40 @@
+name: Update README
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'concepts/**'
+      - 'daily-progress/**'
+      - '.github/workflows/update-readme.yml'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Run update-readme script
+        run: bash update-readme.sh
+      
+      - name: Check if README changed
+        id: readme-changed
+        run: |
+          if git diff --quiet README.md; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit updated README
+        if: steps.readme-changed.outputs.changed == 'true'
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add README.md
+          git commit -m "docs: auto-update README with latest concepts and progress"
+          git push

@@ -17,17 +17,18 @@ Master Go fundamentals and build practical applications.
 ## ✅ Progress
 
 ### Concepts Completed
-- [x] **00-introduction.md** - What is Go, features, compilation, registers, comparison with Python & Java
-- [x] **01-packages-imports.md** - Packages, imports, custom packages, aliases, go.mod
-- [x] **02-variables.md** - Variable declaration, data type basics, multiple variables
-- [x] **03-data-types.md** - Numeric types, string, boolean, composite types (arrays, slices, maps, structs)
-- [x] **04-control-statements.md** - If/Else, Switch/Case, For loops, Break, Continue, Range function
-- [x] **05-goto-statement.md** - Goto statement, when to use, better alternatives (Azazel analogy)
-- [x] **06-defer-panic-recover.md** - Defer, Panic, and Recover concepts
+- [x] ** 00-introduction.md** - Introduction to Go (Golang)
+- [x] **01-packages-imports.md** - Packages and Imports
+- [x] **02-variables.md** - Variables in Go
+- [x] **03-datatypes.md** - Data Types in Go
+- [x] **04-control-statements.md** - Control Statements in Go
+- [x] **05-goto-statement.md** - Goto Statement in Go
+- [x] **06-defer-panic-recover.md** - Defer Panic and Recover
+- [x] **07-arrays.md** - Arrays in Go
 
 ### Daily Progress
-- [x] Day 1: Your First Go Program
-- [x] **control-statements/** - Practice questions and solutions (5 problems solved)
+- [x] **arrays/**
+- [x] **control-statements/**
 
 ---
 
@@ -109,6 +110,6 @@ go run concepts/example-code/simple-import.go
 
 Created: July 2026
 
-Last Updated: 14th July 2026
+Last Updated: 17 July 2026
 
 Status: Actively Learning 🚀
