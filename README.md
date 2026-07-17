@@ -17,7 +17,7 @@ Master Go fundamentals and build practical applications.
 ## ✅ Progress
 
 ### Concepts Completed
-- [x] ** 00-introduction.md** - Introduction to Go (Golang)
+- [x] **00-introduction.md** - Introduction to Go (Golang)
 - [x] **01-packages-imports.md** - Packages and Imports
 - [x] **02-variables.md** - Variables in Go
 - [x] **03-datatypes.md** - Data Types in Go
