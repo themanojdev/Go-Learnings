@@ -37,7 +37,7 @@ generate_concepts() {
     
     find concepts -maxdepth 1 -type f -name "*.md" | sort | while read -r file; do
         if [ -f "$file" ]; then
-            local name=$(basename "$file")
+            local name=$(basename "$file" | xargs)
             local title=$(extract_title "$file")
             echo "- [x] **$name** - $title"
         fi
