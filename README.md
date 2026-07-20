@@ -25,6 +25,7 @@ Master Go fundamentals and build practical applications.
 - [x] **05-goto-statement.md** - Goto Statement in Go
 - [x] **06-defer-panic-recover.md** - Defer Panic and Recover
 - [x] **07-arrays.md** - Arrays in Go
+- [x] **08-scope.md** - Scope in Go
 
 ### Daily Progress
 - [x] **arrays/**
@@ -110,6 +111,6 @@ go run concepts/example-code/simple-import.go
 
 Created: July 2026
 
-Last Updated: 19 July 2026
+Last Updated: 20 July 2026
 
 Status: Actively Learning 🚀
