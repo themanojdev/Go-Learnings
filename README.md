@@ -19,13 +19,13 @@ Master Go fundamentals and build practical applications.
 ### Concepts Completed
 - [x] **00-introduction.md** - Introduction to Go (Golang)
 - [x] **01-packages-imports.md** - Packages and Imports
-- [x] **02-variables.md** - Variables in Go
-- [x] **03-datatypes.md** - Data Types in Go
-- [x] **04-control-statements.md** - Control Statements in Go
-- [x] **05-goto-statement.md** - Goto Statement in Go
-- [x] **06-defer-panic-recover.md** - Defer Panic and Recover
-- [x] **07-arrays.md** - Arrays in Go
-- [x] **08-scope.md** - Scope in Go
+- [x] **02-scope.md** - Scope in Go
+- [x] **03-variables.md** - Variables in Go
+- [x] **04-datatypes.md** - Data Types in Go
+- [x] **05-control-statements.md** - Control Statements in Go
+- [x] **06-goto-statement.md** - Goto Statement in Go
+- [x] **07-defer-panic-recover.md** - Defer Panic and Recover
+- [x] **08-arrays.md** - Arrays in Go
 
 ### Daily Progress
 - [x] **01-control-statements/**
