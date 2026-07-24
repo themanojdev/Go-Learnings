@@ -349,6 +349,20 @@ value := *ptr   // * means "get the value" (dereference)
  
 ---
 
+## Predict the output
+
+```go
+  a := 10
+  b := &a
+  *b = *b + 5
+  c := b
+  *c = 100
+  fmt.Println(a, *b, *c)
+```
+```
+Q1(interview classic): We have written in our notes "pass by reference" for pointers — but here's the twist interviewers love: Go is always pass-by-value, even for pointers. When you call increasePointer(&x), what exactly gets copied, and why can the function still change x even though it received a copy?
+```
+
 ## When to Use Pointers
  
 Use **pointers** when:

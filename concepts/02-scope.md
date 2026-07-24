@@ -245,6 +245,26 @@ Use **Block Scope** when:
 
 ---
 
+## Predict the output
+
+```go
+
+count:=0
+
+for i:=0;i<3;i++ {
+
+    count:= count + 1
+    fmt.Println(count)
+}
+
+fmt.Println(count)
+
+```
+
+```
+Q1 (Interview Question): Your teammate wrote a function calculateTax() in package utils. You import that package in main and call utils.calculateTax() — the compiler refuses. Why, and what's the fix?
+```
+
 ## 💡 Memory Points
  
 1. **Scope** = Region where a variable can be accessed
