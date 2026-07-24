@@ -27,6 +27,7 @@ Master Go fundamentals and build practical applications.
 - [x] **07-defer-panic-recover.md** - Defer Panic and Recover
 - [x] **08-arrays.md** - Arrays in Go
 - [x] **09-pointers.md** - Pointers in Go
+- [x] **10-slices.md** - Slices in Go
 
 ### Daily Progress
 - [x] **01-control-statements/**
