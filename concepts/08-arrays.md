@@ -377,6 +377,35 @@ You are looking at a row of slots in the night sky through a telescope. Each slo
 
 Your telescope lens can only see exactly four slots at a time (K=4). You want to slide the telescope along the sky to find the view that has the maximum number of Rare Gold Stars (7s) at once.
 
+### Question 19: Products of Array Except Self
+Given an integer array nums, return an array output where output[i] is the product of all the elements of nums except nums[i].
+
+Each product is guaranteed to fit in a 32-bit integer.
+
+Follow-up: Could you solve it in 
+O(n)
+O(n) time without using the division operation?
+
+Example 1:
+
+Input: nums = [1,2,4,6]
+
+Output: [48,24,12,8]
+
+### Question 20: Remove Duplicates From Sorted Array
+You are given an integer array nums sorted in non-decreasing order. Your task is to remove duplicates from nums in-place so that each element appears only once.
+
+After removing the duplicates, return the number of unique elements, denoted as k, such that the first k elements of nums contain the unique elements.
+
+Note:
+
+- The order of the unique elements should remain the same as in the original array.
+- It is not necessary to consider elements beyond the first k positions of the array.
+- To be accepted, the first k elements of nums must contain all the unique elements.
+
+Return k as the final result.
+
+
 ## How to use this section:
 1. Try solving each question yourself first
 2. If you get stuck, check the solution in `daily-progress/arrays/` folder
