@@ -28,6 +28,7 @@ Master Go fundamentals and build practical applications.
 - [x] **08-arrays.md** - Arrays in Go
 - [x] **09-pointers.md** - Pointers in Go
 - [x] **10-slices.md** - Slices in Go
+- [x] **11-stringsAndrunes.md** - Strings Runes in Go
 
 ### Daily Progress
 - [x] **01-control-statements/**
