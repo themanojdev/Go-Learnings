@@ -29,6 +29,7 @@ Master Go fundamentals and build practical applications.
 - [x] **09-pointers.md** - Pointers in Go
 - [x] **10-slices.md** - Slices in Go
 - [x] **11-stringsAndrunes.md** - Strings Runes in Go
+- [x] **12-maps.md** - Maps in Go
 
 ### Daily Progress
 - [x] **01-control-statements/**
@@ -114,6 +115,6 @@ go run concepts/example-code/simple-import.go
 
 Created: July 2026
 
-Last Updated: 26 July 2026
+Last Updated: 27 July 2026
 
 Status: Actively Learning 🚀
