@@ -31,6 +31,8 @@ Master Go fundamentals and build practical applications.
 - [x] **11-stringsAndrunes.md** - Strings Runes in Go
 - [x] **12-maps.md** - Maps in Go
 - [x] **13-functions.md** - Functions in Go
+- [x] **14-custom-types.md** - Custom Types in Go (type keyword)
+- [x] **15-methods.md** - Methods in Go
 
 ### Daily Progress
 - [x] **01-control-statements/**
@@ -116,6 +118,6 @@ go run concepts/example-code/simple-import.go
 
 Created: July 2026
 
-Last Updated: 27 July 2026
+Last Updated: 28 July 2026
 
 Status: Actively Learning 🚀
