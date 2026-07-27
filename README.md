@@ -30,6 +30,7 @@ Master Go fundamentals and build practical applications.
 - [x] **10-slices.md** - Slices in Go
 - [x] **11-stringsAndrunes.md** - Strings Runes in Go
 - [x] **12-maps.md** - Maps in Go
+- [x] **13-functions.md** - Functions in Go
 
 ### Daily Progress
 - [x] **01-control-statements/**
