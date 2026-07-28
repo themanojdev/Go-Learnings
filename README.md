@@ -33,6 +33,7 @@ Master Go fundamentals and build practical applications.
 - [x] **13-functions.md** - Functions in Go
 - [x] **14-custom-types.md** - Custom Types in Go (type keyword)
 - [x] **15-methods.md** - Methods in Go
+- [x] **16-structs.md** - Structs in Go
 
 ### Daily Progress
 - [x] **01-control-statements/**
