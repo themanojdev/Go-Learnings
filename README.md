@@ -34,6 +34,7 @@ Master Go fundamentals and build practical applications.
 - [x] **14-custom-types.md** - Custom Types in Go (type keyword)
 - [x] **15-methods.md** - Methods in Go
 - [x] **16-structs.md** - Structs in Go
+- [x] **17-error-handling.md** - Error Handling in Go
 
 ### Daily Progress
 - [x] **01-control-statements/**
@@ -119,6 +120,6 @@ go run concepts/example-code/simple-import.go
 
 Created: July 2026
 
-Last Updated: 28 July 2026
+Last Updated: 29 July 2026
 
 Status: Actively Learning 🚀
