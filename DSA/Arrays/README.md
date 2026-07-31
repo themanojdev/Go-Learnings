@@ -6,7 +6,7 @@ Practice problems solved in this folder, with the problem statement and a link t
 
 1. [Reverse an Array](#1-reverse-an-array)
 2. [Reverse Array in Groups of K](#2-reverse-array-in-groups-of-k)
-3. [Rotate Array by D (Left)](#3-rotate-array-by-d-left)
+3. [Rotate Array by D (Conter Clock Wise -> Left)](#3-rotate-array-by-d-left)
 4. [Move Zeros to End](#4-move-zeros-to-end)
 5. [Remove Duplicates from Sorted Array](#5-remove-duplicates-from-sorted-array)
 6. [Maximum Consecutive Ones/Zeros](#6-maximum-consecutive-oneszeros)
