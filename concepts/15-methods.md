@@ -79,19 +79,6 @@ func (c Celsius) ToFahrenheit() float64 {
  
 ---
 
-## Method 3: Methods on Non-Struct Types
-Go allows methods on any named type, not just structs. This is heavily used in real projects for validation and formatting logic.
- 
-```go
-type Celsius float64
- 
-func (c Celsius) ToFahrenheit() float64 {
-    return float64(c)*9/5 + 32
-}
-```
- 
----
-
 ## Practical Code Example
  
 ```go

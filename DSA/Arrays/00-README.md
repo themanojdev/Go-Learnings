@@ -14,6 +14,8 @@ Practice problems solved in this folder, with the problem statement and a link t
 8. [Third Largest Element](#8-third-largest-element)
 9. [Maximum Product of a Triplet](#9-maximum-product-of-a-triplet)
 10. [Maximum Product Subarray](#10-maximum-product-subarray)
+11. [Sort Array in Wave Form](#11-sort-array-in-wave-form)
+12. [Add One to a Number (Digit Array)](#12-add-one-to-a-number-digit-array)
 
 ---
 
@@ -27,7 +29,7 @@ Input:  [1, 2, 3, 4, 5]
 Output: [5, 4, 3, 2, 1]
 ```
 
-Solution: [`reverse.go`](reverse.go) — `ReverseArray`
+Solution: [`01-reverse.go`](01-reverse.go) — `ReverseArray`
 
 ---
 
@@ -41,7 +43,7 @@ Input:  arr = [1, 2, 3, 4, 5, 6, 7, 8], k = 3
 Output: [3, 2, 1, 6, 5, 4, 8, 7]
 ```
 
-Solution: [`reverse-group.go`](reverse-group.go) — `ReverseArrayGroupWise`
+Solution: [`02-reverse-group.go`](02-reverse-group.go) — `ReverseArrayGroupWise`
 
 ---
 
@@ -55,7 +57,7 @@ Input:  arr = [1, 2, 3, 4, 5, 6], d = 2
 Output: [3, 4, 5, 6, 1, 2]
 ```
 
-Solution: [`rotate-array.go`](rotate-array.go) — `RotateArray`
+Solution: [`03-rotate-array.go`](03-rotate-array.go) — `RotateArray`
 
 ---
 
@@ -69,7 +71,7 @@ Input:  [0, 1, 0, 3, 12]
 Output: [1, 3, 12, 0, 0]
 ```
 
-Solution: [`move-zeros-end.go`](move-zeros-end.go) — `MoveZerosToEnd`
+Solution: [`04-move-zeros-end.go`](04-move-zeros-end.go) — `MoveZerosToEnd`
 
 ---
 
@@ -83,7 +85,7 @@ Input:  [1, 1, 2, 2, 3]
 Output: [1, 2, 3]
 ```
 
-Solution: [`remove-duplicates-array.go`](remove-duplicates-array.go) — `RemoveDuplicatesFromArray`
+Solution: [`05-remove-duplicates-array.go`](05-remove-duplicates-array.go) — `RemoveDuplicatesFromArray`
 
 ---
 
@@ -97,7 +99,7 @@ Input:  [1, 1, 0, 0, 0, 1]
 Output: 3
 ```
 
-Solution: [`maximum-consecutive.go`](maximum-consecutive.go) — `MaxConsecBits`
+Solution: [`06-maximum-consecutive.go`](06-maximum-consecutive.go) — `MaxConsecBits`
 
 ---
 
@@ -111,7 +113,7 @@ Input:  [12, 35, 1, 10, 34, 1]
 Output: 34
 ```
 
-Solution: [`second-largest.go`](second-largest.go) — `SecondLargest`
+Solution: [`07-second-largest.go`](07-second-largest.go) — `SecondLargest`
 
 ---
 
@@ -125,7 +127,7 @@ Input:  [1, 14, 2, 16, 10, 20]
 Output: 14
 ```
 
-Solution: [`third-largest.go`](third-largest.go) — `ThirdLargest`
+Solution: [`08-third-largest.go`](08-third-largest.go) — `ThirdLargest`
 
 ---
 
@@ -145,7 +147,7 @@ Input:  [1, -4, 3, -6, 7, 0]
 Output: 168
 ```
 
-Solution: [`three-great-candidates.go`](three-great-candidates.go) — `maximumProduct`
+Solution: [`09-three-great-candidates.go`](09-three-great-candidates.go) — `maximumProduct`
 
 ---
 
@@ -162,4 +164,36 @@ Input:  [-3, 0, -2]
 Output: 0
 ```
 
-Solution: [`maximum-product-subarray.go`](maximum-product-subarray.go) — `MaximumProductSubarray`
+Solution: [`10-maximum-product-subarray.go`](10-maximum-product-subarray.go) — `MaximumProductSubarray`
+
+---
+
+### 11. Sort Array in Wave Form
+
+Given an array `nums[]`, rearrange it into a wave form by swapping every adjacent pair (indices `0↔1`, `2↔3`, `4↔5`, ...).
+
+**Example**
+```
+Input:  [1, 2, 3, 4, 5, 6]
+Output: [2, 1, 4, 3, 6, 5]
+```
+
+Note: this swaps adjacent pairs unconditionally — it produces a valid ascending/descending wave (`nums[0] >= nums[1] <= nums[2] >= ...`) only when the input is already sorted in ascending order first.
+
+Solution: [`11-wave-form.go`](11-wave-form.go) — `SortArrayInWave`
+
+---
+
+### 12. Add One to a Number (Digit Array)
+
+Given a large integer represented as an array of digits (most significant digit first, no leading zeros), increment the number by one and return the resulting digit array.
+
+**Example**
+```
+Input:  [1, 2, 3]
+Output: [1, 2, 4]
+```
+
+⚠️ **Note:** this solution converts the digit array into a single `int` (`result`), adds one, then splits it back into digits. That only works for numbers small enough to fit in an `int`. On LeetCode, `digits` can have up to ~100 elements — far more digits than an `int`/`int64` can hold — so `result` silently overflows and this solution **will fail** on the platform's larger test cases. The correct approach avoids converting to a number at all: walk the array from the last digit, increment with carry propagation in place, and only prepend a new leading `1` if every digit was a `9` (e.g. `[9,9,9] → [1,0,0,0]`).
+
+Solution: [`12-add-digitTo-number.go`](12-add-digitTo-number.go) — `AddingOneDigitToGivenNumber`
