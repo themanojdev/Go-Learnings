@@ -12,7 +12,7 @@ func AddingOneDigitToGivenNumber(nums []int) []int {
 		place *= 10
 		
 	}
-  slice++	
+  result++	
   var slice []int
 
 	for result > 0 {
