@@ -6,6 +6,7 @@ README="README.md"
 TEMP_README=$(mktemp)
 TEMP_CONCEPTS=$(mktemp)
 TEMP_PROGRESS=$(mktemp)
+TEMP_DSA=$(mktemp)
 
 echo "Starting README update..."
 
@@ -63,28 +64,52 @@ generate_progress() {
     done | sort -u
 }
 
+# Generate DSA Progress section with deduplication
+generate_dsa() {
+    if [ ! -d "DSA" ]; then
+        echo "Warning: DSA directory not found" >&2
+        return
+    fi
+
+    find DSA -mindepth 1 -maxdepth 1 -not -name ".*" | sort | while read -r item; do
+        if [ -e "$item" ]; then
+            local base=$(basename "$item")
+            if [ -d "$item" ]; then
+                echo "- [x] **${base}/**"
+            else
+                echo "- [x] $base"
+            fi
+        fi
+    done | sort -u
+}
+
 # Get current date
 TODAY=$(date +"%-d %B %Y")
 
-# Generate concepts and progress to temp files
+# Generate concepts, progress, and DSA to temp files
 generate_concepts > "$TEMP_CONCEPTS"
 generate_progress > "$TEMP_PROGRESS"
+generate_dsa > "$TEMP_DSA"
 
 CONCEPTS_COUNT=$(wc -l < "$TEMP_CONCEPTS")
 PROGRESS_COUNT=$(wc -l < "$TEMP_PROGRESS")
+DSA_COUNT=$(wc -l < "$TEMP_DSA")
 
 echo "Generated concepts: $CONCEPTS_COUNT lines"
 echo "Generated progress: $PROGRESS_COUNT lines"
+echo "Generated DSA: $DSA_COUNT lines"
 
 # Update README using awk with temp file approach
 awk \
 -v concepts_file="$TEMP_CONCEPTS" \
 -v progress_file="$TEMP_PROGRESS" \
+-v dsa_file="$TEMP_DSA" \
 -v today="$TODAY" \
 '
 BEGIN {
     in_concepts = 0
     in_progress = 0
+    in_dsa = 0
 }
 {
     # Handle Concepts Completed section header
@@ -96,9 +121,10 @@ BEGIN {
         close(concepts_file)
         in_concepts = 1
         in_progress = 0
+        in_dsa = 0
         next
     }
-    
+
     # Handle Daily Progress section header
     if ($0 ~ /^### Daily Progress/) {
         print $0
@@ -108,26 +134,41 @@ BEGIN {
         close(progress_file)
         in_progress = 1
         in_concepts = 0
+        in_dsa = 0
         next
     }
-    
-    # Exit current section when hitting next section header
-    if ((in_concepts || in_progress) && $0 ~ /^###/) {
+
+    # Handle DSA Progress section header
+    if ($0 ~ /^### DSA Progress/) {
+        print $0
+        while ((getline line < dsa_file) > 0) {
+            print line
+        }
+        close(dsa_file)
+        in_dsa = 1
         in_concepts = 0
         in_progress = 0
-    }
-    
-    # Skip old list items in active sections
-    if ((in_concepts || in_progress) && $0 ~ /^- \[/) {
         next
     }
-    
+
+    # Exit current section when hitting next section header
+    if ((in_concepts || in_progress || in_dsa) && $0 ~ /^###/) {
+        in_concepts = 0
+        in_progress = 0
+        in_dsa = 0
+    }
+
+    # Skip old list items in active sections
+    if ((in_concepts || in_progress || in_dsa) && $0 ~ /^- \[/) {
+        next
+    }
+
     # Update Last Updated timestamp
     if ($0 ~ /^Last Updated:/) {
         print "Last Updated: " today
         next
     }
-    
+
     print $0
 }
 ' "$README" > "$TEMP_README"
@@ -143,6 +184,6 @@ else
 fi
 
 # Cleanup
-rm -f "$TEMP_CONCEPTS" "$TEMP_PROGRESS"
+rm -f "$TEMP_CONCEPTS" "$TEMP_PROGRESS" "$TEMP_DSA"
 
 exit 0

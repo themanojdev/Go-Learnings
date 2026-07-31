@@ -40,6 +40,9 @@ Master Go fundamentals and build practical applications.
 - [x] **01-control-statements/**
 - [x] **02-arrays/**
 
+### DSA Progress
+- [x] **Arrays/**
+
 ---
 
 ## 📚 Learning Resources
@@ -120,6 +123,6 @@ go run concepts/example-code/simple-import.go
 
 Created: July 2026
 
-Last Updated: 29 July 2026
+Last Updated: 31 July 2026
 
 Status: Actively Learning 🚀

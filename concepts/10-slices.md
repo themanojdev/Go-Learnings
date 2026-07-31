@@ -333,18 +333,18 @@ func main() {
     arr := [5]int{10, 20, 30, 40, 50}
     
     slice1 := arr[0:3]  // [10 20 30]
-    slice2 := arr[2:5]  // [30 40 50]
+    slice2 := arr[2:5]  // [30 40]
     
     fmt.Println("Before modification:")
     fmt.Println("slice1:", slice1)  // [10 20 30]
-    fmt.Println("slice2:", slice2)  // [30 40 50]
+    fmt.Println("slice2:", slice2)  // [30 40]
     
     // Modify through slice1
     slice1[1] = 99
     
     fmt.Println("After modifying slice1[1] = 99:")
     fmt.Println("slice1:", slice1)  // [10 99 30]
-    fmt.Println("slice2:", slice2)  // [30 99 50] - Also changed!
+    fmt.Println("slice2:", slice2)  // [30 40] 
     fmt.Println("arr:", arr)        // [10 99 30 40 50]
 }
 ```
