@@ -122,7 +122,7 @@ Given an array `arr[]`, find the third largest distinct element.
 **Example**
 ```
 Input:  [1, 14, 2, 16, 10, 20]
-Output: 16
+Output: 14
 ```
 
 Solution: [`third-largest.go`](third-largest.go) — `ThirdLargest`
