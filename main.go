@@ -5,6 +5,7 @@ import (
 	// printingHelloworld "go-learnings/concepts/example-code/01-package-imports"
 	controlstatementproblems "go-learnings/daily-progress/01-control-statements"
 	arrays "go-learnings/daily-progress/02-arrays"
+	DSA "go-learnings/DSA/Arrays"
 )
 
 func main() {
@@ -20,5 +21,9 @@ func main() {
 	arrays.ReverseArray(arr)
 
 	convertingToJson()
+
+	result := DSA.SecondLargest([]int{10,20,30,40,50})
+
+	fmt.Println("Second Largest",result)
 
 }
