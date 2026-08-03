@@ -37,6 +37,7 @@ Master Go fundamentals and build practical applications.
 - [x] **17-error-handling.md** - Error Handling in Go
 - [x] **18-interfaces.md** - Interfaces in Go
 - [x] **19-goroutines.md** - Goroutines in Go
+- [x] **20-sync-pakage.md** - Sync Package Mutex RWMutex Once Atomic
 
 ### Daily Progress
 - [x] **01-control-statements/**
@@ -125,6 +126,6 @@ go run concepts/example-code/simple-import.go
 
 Created: July 2026
 
-Last Updated: 3 August 2026
+Last Updated: 4 August 2026
 
 Status: Actively Learning 🚀
