@@ -22,6 +22,7 @@ Master Go fundamentals and build practical applications.
 - [x] **02-scope.md** - Scope in Go
 - [x] **03-variables.md** - Variables in Go
 - [x] **04-datatypes.md** - Data Types in Go
+- [x] **05(A)-if-initial-statement.md** - If Statement with Initial Statement
 - [x] **05-control-statements.md** - Control Statements in Go
 - [x] **06-goto-statement.md** - Goto Statement in Go
 - [x] **07-defer-panic-recover.md** - Defer Panic and Recover
@@ -126,6 +127,6 @@ go run concepts/example-code/simple-import.go
 
 Created: July 2026
 
-Last Updated: 4 August 2026
+Last Updated: 5 August 2026
 
 Status: Actively Learning 🚀
