@@ -225,6 +225,42 @@ for i := 0; i < 3; i++ {
  
 ---
 
+## Goroutine vs OS Thread
+ 
+This is one of the most commonly asked Go interview questions.
+ 
+| | OS Thread | Goroutine |
+|---|---|---|
+| Managed by | Operating system | Go runtime |
+| Initial stack size | ~1-2 MB (fixed) | ~2 KB (grows as needed) |
+| Creation cost | Expensive | Very cheap |
+| Typical scale | Thousands | Hundreds of thousands+ |
+| Switching cost | Expensive (kernel involved) | Cheap (handled by Go scheduler) |
+ 
+**Why goroutines are "lightweight":** an OS thread is created and managed by the operating system, with a large fixed stack. A goroutine is created and managed by the Go runtime, starting with a tiny stack that grows or shrinks as needed — making it dramatically cheaper to create and switch between.
+
+### The GMP Model (High-Level)
+ 
+Go doesn't give each goroutine its own OS thread. Instead, it uses a scheduler with three pieces:
+- **G** = Goroutine (the actual task)
+- **M** = Machine (an OS thread)
+- **P** = Processor (a context that manages scheduling)
+Many **G**s get multiplexed onto a much smaller number of **M**s, coordinated by **P**s — an **M:N model** (many goroutines, few OS threads), instead of a **1:1 model** (one thread per task).
+
+### Comparison with Java Threads
+ 
+Traditional Java (`new Thread()`) uses a **1:1 model** — every Java thread maps directly to one real OS thread, inheriting all its costs (large stack, expensive creation).
+ 
+| | Java (traditional `Thread`) | Go (`goroutine`) |
+|---|---|---|
+| Mapping to OS threads | 1:1 | M:N (many share few) |
+| Managed by | Operating system | Go runtime |
+| Stack size | ~1 MB fixed | ~2 KB, grows as needed |
+ 
+**Note:** Java 21 (2023) introduced **virtual threads** (Project Loom), which behave more like goroutines — lightweight and JVM-managed, not directly 1:1 with OS threads. Go was designed this way from the start; Java added it later as a new feature.
+ 
+---
+
 ## When to Use
  
 - **Goroutines:** any time you want a task to run without blocking the rest of the program (background work, handling multiple requests, running independent steps concurrently)
