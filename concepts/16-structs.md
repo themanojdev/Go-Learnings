@@ -236,6 +236,18 @@ This gives you a clean, safe place to add validation or default values before th
  
 ---
 
+## Practice Exercise: Membership System
+
+**Problem Statement:**
+Complete the `newUser` function. It takes a `name` and a `membershipType` (`"premium"` or `"standard"`) and returns a `User` with an embedded `Membership`.
+- `"premium"` membership gets a `MessageCharLimit` of `1000`
+- `"standard"` membership gets a `MessageCharLimit` of `100`
+- any other `membershipType` should return an empty (zero-value) `User`
+
+Solution: [`16-structs/main.go`](example-code/16-structs/main.go)
+
+---
+
 ## Empty Struct `struct{}`
 An empty struct has no fields and takes **zero bytes** of memory. It's used when you only care that a key exists, not its value.
  
