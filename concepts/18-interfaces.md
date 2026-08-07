@@ -314,6 +314,51 @@ func NewCircle(radius float64) Circle {
  
 ---
 
+## Practice Exercise 1: Notification System
+
+**Problem Statement:**
+Textio processes different types of notifications — direct messages, group messages, and system alerts. Each type has its own way of calculating an importance score.
+
+**Types to define:**
+
+- `notification` interface — one method, `importance() int`
+- `directMessage` struct — `senderUsername` (string), `messageContent` (string), `priorityLevel` (int), `isUrgent` (bool)
+- `groupMessage` struct — `groupName` (string), `messageContent` (string), `priorityLevel` (int)
+- `systemAlert` struct — `alertCode` (string), `messageContent` (string)
+
+Note that each struct carries only the fields its own rule needs: `directMessage` has both `priorityLevel` and `isUrgent` (two rules), `groupMessage` has `priorityLevel` only (one rule), and `systemAlert` has neither — which is why its score has to be a fixed value.
+
+**Tasks:**
+
+1. Implement the `notification` interface (method `importance() int`) for `directMessage`, `groupMessage`, and `systemAlert`:
+   - `directMessage` — if `isUrgent` is `true` the score is `50`, otherwise it's the DM's `priorityLevel`
+   - `groupMessage` — the score is the message's `priorityLevel`
+   - `systemAlert` — the score is always `100`
+2. Write a `processNotification` function that takes a `notification` and returns a `string` and an `int`:
+   - `directMessage` → the sender's username and the importance score
+   - `groupMessage` → the group's name and the importance score
+   - `systemAlert` → the alert code and the importance score
+   - any unknown type → an empty string and a score of `0`
+
+Solution: [`18-interfaces/notification-system.go`](example-code/18-interfaces/notification-system.go)
+
+---
+
+## Practice Exercise 2: Custom Message Formats
+
+**Problem Statement:**
+Textio lets users send messages in different formats — plain text, bold, or inline code. Manage this with an interface.
+
+1. Define a `formatter` interface with a `format()` method that returns a formatted `string`.
+2. Define structs that satisfy the `formatter` interface: `plainText`, `bold`, and `code`. All three must have a `message` field of type `string`.
+   - `plainText` — returns the message as is
+   - `bold` — wraps the message in two asterisks to simulate bold text (e.g. `**message**`)
+   - `code` — wraps the message in single backticks to simulate inline code (e.g. `` `message` ``)
+
+Solution: [`18-interfaces/message-formatter.go`](example-code/18-interfaces/message-formatter.go)
+
+---
+
 ## When to Use
  
 - **Interfaces:** when a function should work with multiple types that share behavior, or when you need to swap real vs test implementations
