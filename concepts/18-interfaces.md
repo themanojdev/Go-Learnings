@@ -350,7 +350,8 @@ Solution: [`18-interfaces/notification-system.go`](example-code/18-interfaces/no
 Textio lets users send messages in different formats — plain text, bold, or inline code. Manage this with an interface.
 
 1. Define a `formatter` interface with a `format()` method that returns a formatted `string`.
-2. Define structs that satisfy the `formatter` interface: `plainText`, `bold`, and `code`. All three must have a `message` field of type `string`.
+2. Define three structs — `plainText`, `bold`, and `code` — each with a `message` field of type `string`.
+3. Give each struct its own `format()` implementation so all three satisfy the `formatter` interface:
    - `plainText` — returns the message as is
    - `bold` — wraps the message in two asterisks to simulate bold text (e.g. `**message**`)
    - `code` — wraps the message in single backticks to simulate inline code (e.g. `` `message` ``)

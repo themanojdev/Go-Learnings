@@ -239,10 +239,20 @@ This gives you a clean, safe place to add validation or default values before th
 ## Practice Exercise: Membership System
 
 **Problem Statement:**
-Complete the `newUser` function. It takes a `name` and a `membershipType` (`"premium"` or `"standard"`) and returns a `User` with an embedded `Membership`.
-- `"premium"` membership gets a `MessageCharLimit` of `1000`
-- `"standard"` membership gets a `MessageCharLimit` of `100`
-- any other `membershipType` should return an empty (zero-value) `User`
+A messaging app has two membership tiers, `"premium"` and `"standard"`, and each tier allows a different maximum message length. Model a user whose membership details live in a separate struct **embedded** inside the user, so the membership fields can be reached directly from the user.
+
+**Types to define:**
+
+- `Membership` struct — `Type` (string), `MessageCharLimit` (int)
+- `User` struct — an embedded `Membership` (no field name, just the type) and `Name` (string)
+
+**Tasks:**
+
+1. Write a `newUser` function that takes a `name` (string) and a `membershipType` (string) and returns a `User` with its `Membership` filled in:
+   - `"premium"` — `MessageCharLimit` of `1000`
+   - `"standard"` — `MessageCharLimit` of `100`
+   - any other `membershipType` — return an empty (zero-value) `User`
+2. Confirm the embedding works by reading the limit straight off the user (`user.MessageCharLimit`) without going through `user.Membership` first.
 
 Solution: [`16-structs/main.go`](example-code/16-structs/main.go)
 
