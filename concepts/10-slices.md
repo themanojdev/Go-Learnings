@@ -698,6 +698,24 @@ fmt.Println(arr)
 fmt.Println(s2)
 ```
 
+## Practice Exercise: Bad Word Detector
+
+**Problem Statement:**
+A messaging system needs to flag messages containing banned words. A message is represented as a slice of individual words, and there's a separate slice holding the words that aren't allowed.
+
+**Tasks:**
+
+1. Write an `indexOfFirstBadWord` function that takes two arguments and returns an `int`:
+   - `msg` — a single message as a slice of words (`[]string`)
+   - `badWords` — the list of banned words (`[]string`)
+2. It should return the index (position in `msg`) of the **first** word that appears in `badWords`.
+3. If the message contains no bad words, return `-1`.
+4. Use the `range` keyword to do the looping.
+
+Solution: [`10-slices/bad-word-detector.go`](example-code/10-slices/bad-word-detector.go)
+
+---
+
 ## Key Differences: Array vs Slice
  
 | Feature | Array | Slice |
