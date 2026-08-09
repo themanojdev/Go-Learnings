@@ -831,6 +831,26 @@ Conversion failed: strconv.Atoi: parsing "abc": invalid syntax
  
 ---
 
+## Practice Exercise: Password Validator
+
+**Problem Statement:**
+A messaging platform is enforcing a new password policy. Write a validator that checks a password string against the rules below.
+
+**Tasks:**
+
+1. Write a function that takes a password `string` and returns a `bool` indicating whether it is valid.
+2. A password is valid only if **all** of these hold:
+   - At least 5 characters long, but no more than 12
+   - Contains at least one uppercase letter
+   - Contains at least one digit
+3. Iterate over the password's characters using `range` and classify each one with the `unicode` package (`unicode.IsUpper`, `unicode.IsDigit`).
+
+Hint: think about whether the length check should count **bytes** (`len(password)`) or **runes** — they differ the moment a non-ASCII character shows up.
+
+Solution: [`11-strings-runes/password-validator.go`](example-code/11-strings-runes/password-validator.go)
+
+---
+
 ## Key Differences: String vs Byte vs Rune
  
 | Type | Represents | Size | Example |
