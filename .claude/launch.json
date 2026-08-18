@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "routine-shopping-app",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "/Users/manojn/Downloads/Routine-shopping-app", "run", "dev"],
+      "port": 5173,
+      "autoPort": true
+    }
+  ]
+}
